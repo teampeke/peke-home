@@ -1,0 +1,182 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+<nav>
+  <a href="index.html">HOME</a> 
+  <a href="live.html" class="current">LIVE</a> 
+  <a href="disc.html">DISC</a> 
+  <a href="sns.html">SNS</a> 
+  <a href="youtube.html">YouTube</a> 
+  <a href="link.html">LINK</a>
+</nav>
+
+<h1>LIVE</h1>
+
+<div class="live-card" data-date="2026-10-30">
+
+<h2 class="live-date">2026年10月30日（金）</h2>
+
+<h3 class="live-title">ホルモン五人前</h3>
+
+<p><a href="https://maps.app.goo.gl/ctjfJL3KYnN8uARk9" target="_blank" rel="noopener noreferrer">SUNSET BOULEVARD（宮城県柴田町）</a></p>
+
+<p>
+  開場 18:30 ／ 開演 18:45<br>
+  料金 3,000円（1ドリンク込み）
+</p>
+
+<h4>出演</h4>
+
+<p>
+  ペケキング・テリー<br>
+  モンゴール☆天山<br>
+  ちっちのじ<br>
+  秘密のコペカチータ<br>
+  ミッキースナフキー
+</p>
+<img src="images/live-20261030.jpg" alt="2026年10月30日 ホルモン五人前 フライヤー">
+
+</div>
+
+
+<div class="live-card" data-date="2026-10-31">
+
+<h2 class="live-date">2026年10月31日（土）</h2>
+
+<h3 class="live-title">ブルース・ヒロウィンナイト</h3>
+
+<p><a href="https://maps.app.goo.gl/TDuM8bNPGgUnLGUs5" target="_blank" rel="noopener noreferrer">ブルースヒロ（山形県酒田市）</a></p>
+
+<p>
+  開場・前説 16:00 ／ 開演 16:30<br>
+  料金 4,000円（1ドリンク込み）
+</p>
+
+<h4>出演</h4>
+
+<p>
+  ペケキング・テリー<br>
+  モンゴール☆天山<br>
+  ミノルズ<br>
+  はんだすなお<br>
+  片岡大志
+</p>
+<a href="images/live-20261031.jpg">
+  <img src="images/live-20261031.jpg" alt="2026年10月31日 ブルース・ヒロウィンナイト フライヤー">
+</a>
+
+</div>
+
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-image" src="" alt="拡大画像">
+</div>
+
+<div class="live-card" data-date="2026-11-15">
+
+  <h2 class="live-date">2026年11月15日（日）</h2>
+
+  <h3 class="live-title">アニつる　黄金時代編</h3>
+
+  <p>
+    <a href="https://maps.app.goo.gl/BpLA6nDZ3ZRiTLhZ7"
+       target="_blank"
+       rel="noopener noreferrer">
+      なんば紅鶴
+    </a>
+  </p>
+
+  <p>14時30分 開演</p>
+  <p>3000円（1ドリンク込み）</p>
+
+  <h3>DJ</h3>
+  <p>
+    ロビン前田・タカタカアキ・あちゃぴん・ブリティッシュバタードッグ・
+    AKATUYUTAKA・アメリカンバッドボーイ・マタムネ・テラマンチャ寺田・
+    しばりやトーマス・ごんぼそ
+  </p>
+
+  <h3>SPECIAL GUEST</h3>
+  <p>ひらかん（特パーソン）</p>
+
+  <h3>Live</h3>
+  <p>ペケキング・テリー</p>
+
+  <h3>Live paint</h3>
+  <p>盆栽兄弟</p>
+
+  <h3>food</h3>
+  <p>バルタンキッチン</p>
+
+  <img src="images/live-20261115.jpg"
+     alt="アニつる 黄金時代編 告知画像"
+     class="live-flyer">
+
+</div>
+
+<div class="live-card" data-date="2026-12-18">
+ <h2 class="live-date">2026年12月18日（金）</h2>
+
+  <h3 class="live-title">日本の魅力発見！スライドアドベンチャー</h3>
+
+  <p>
+    <a href="https://maps.app.goo.gl/rgYfWJCZrtVkd5XE9"
+       target="_blank"
+       rel="noopener noreferrer">
+      なんば白鯨
+    </a>
+  </p>
+
+  <p>時間・料金未定</p>
+
+  <h3>出演</h3>
+  <p>
+    ペケキング・テリー / ぶっちょカシワギ / 登山正文（私の思い出）
+  </p>
+
+</div>
+
+<script>
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  document.querySelectorAll(".live-card").forEach(function(card) {
+    const dateText = card.dataset.date;
+    if (!dateText) return;
+
+    const liveDate = new Date(dateText + "T00:00:00");
+
+    const hideDate = new Date(liveDate);
+    hideDate.setDate(hideDate.getDate() + 2);
+
+    if (today >= hideDate) {
+      card.style.display = "none";
+    }
+  });
+</script>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const closeButton = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".live-card img").forEach(function(image) {
+    image.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      lightboxImage.src = image.src;
+      lightbox.classList.add("open");
+    });
+  });
+
+  closeButton.addEventListener("click", function() {
+    lightbox.classList.remove("open");
+  });
+
+  lightbox.addEventListener("click", function(event) {
+    if (event.target === lightbox) {
+      lightbox.classList.remove("open");
+    }
+  });
+</script>
+
