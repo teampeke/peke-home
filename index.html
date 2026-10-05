@@ -41,3 +41,27 @@
   LINK
   <span class="home-info">工事中</span>
 </h2>
+
+<div class="marimo-president" onclick="marimoSleep(this)">
+  <img src="images/marimo-kun-02.png" alt="レーベル社長マリモ君">
+</div>
+
+<script>
+function marimoSleep(element) {
+  const z = document.createElement("span");
+  z.className = "sleep-z";
+  z.textContent = "スヤァ…";
+
+  z.style.left = "43%";
+  z.style.top = "35%";
+
+  element.appendChild(z);
+
+  setTimeout(() => {
+    z.remove();
+  }, 2000);
+}
+</script>
+
+</body>
+</html>

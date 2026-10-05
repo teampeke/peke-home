@@ -179,3 +179,39 @@ nav a:hover {
 .home-heading {
   font-size: 1.3em;
 }
+
+.marimo-president {
+  text-align: center;
+  margin-top: 70px;
+  position: relative;
+}
+
+.marimo-president img {
+  width: 50%;
+  height: auto;
+}
+
+.sleep-z {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f3f0e6;
+  pointer-events: none;
+  animation: float-z 2s ease-out forwards;
+}
+
+@keyframes float-z {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.7);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(40px, -80px) scale(1.3);
+  }
+}
