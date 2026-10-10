@@ -215,3 +215,8 @@ nav a:hover {
     transform: translate(40px, -80px) scale(1.3);
   }
 }
+
+.counter-area {
+  text-align: center;
+  margin-top: 10px;
+}
